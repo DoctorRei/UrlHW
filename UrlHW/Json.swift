@@ -8,7 +8,7 @@
 
 struct ModelJSon: Decodable {
     
-    let url: String?
+    let url: String
     let artist: String?
     let artist_url: String?
     let source_url: String?

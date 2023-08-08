@@ -9,14 +9,11 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
+    //MARK: - IBOutlet
+    
     @IBOutlet var imageView: UIImageView!
     
-   
-    
-    
-
-    
-    
+    //MARK: - IBAction
     
     @IBAction func buttonPressed() {
         guard let url = URL(string: Links.nekoImage.rawValue) else { return}

@@ -41,6 +41,9 @@
                             <constraint firstItem="jy0-WY-5Fi" firstAttribute="top" secondItem="nnx-Jr-M6m" secondAttribute="bottom" constant="72" id="ykb-vx-RZj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="nnx-Jr-M6m" id="TeU-4j-EPU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
