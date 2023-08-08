@@ -13,6 +13,8 @@ class FirstViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     
+    //MARK: - Global Value
+    
     var imageURL: URL?
     
     //MARK: - IBAction
