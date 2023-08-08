@@ -13,6 +13,8 @@ class FirstViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     
+    var imageURL: URL?
+    
     //MARK: - IBAction
     
     @IBAction func buttonPressed() {
@@ -28,13 +30,23 @@ class FirstViewController: UIViewController {
             
             do {
                 let images = try decoder.decode(ModelJSon.self, from: data)
+                self?.imageURL = URL(string: images.url)
                 print(images)
+                DispatchQueue.main.async {
+                    if let imageURL = self?.imageURL {
+                        if let data = try? Data(contentsOf: imageURL) {
+                            self?.imageView.image = UIImage(data: data)
+                        }
+                    }
+                }
             } catch let error {
                 print(error.localizedDescription)
             }
             
         }.resume()
     }
+    
+    
 
 }
 
