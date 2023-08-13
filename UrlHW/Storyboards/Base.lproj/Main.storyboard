@@ -20,21 +20,38 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jy0-WY-5Fi">
                                 <rect key="frame" x="24" y="683" width="345" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Я кстати не анимешник. Я в завязке"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Дай мне мальчика"/>
                                 <connections>
-                                    <action selector="buttonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="G7s-7Y-rrn"/>
+                                    <action selector="buttonBoyPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="G7s-7Y-rrn"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nnx-Jr-M6m">
                                 <rect key="frame" x="16" y="99" width="361" height="512"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syK-Ih-geW">
+                                <rect key="frame" x="24" y="726" width="345" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Дай мне девочку"/>
+                                <connections>
+                                    <action selector="buttonGirlPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="BBi-9Q-h0z"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="pxk-tm-tZR">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="pxk-tm-tZR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2DS-V5-W7K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="syK-Ih-geW" secondAttribute="trailing" constant="24" id="Grw-0c-8eC"/>
+                            <constraint firstItem="syK-Ih-geW" firstAttribute="top" secondItem="jy0-WY-5Fi" secondAttribute="bottom" constant="8" symbolic="YES" id="HDW-n0-hY8"/>
                             <constraint firstItem="nnx-Jr-M6m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="HUF-Ey-ZMp"/>
                             <constraint firstItem="nnx-Jr-M6m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Q0q-8h-gyW"/>
+                            <constraint firstItem="pxk-tm-tZR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SNc-P5-ESs"/>
+                            <constraint firstItem="syK-Ih-geW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="TBH-lU-BCH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jy0-WY-5Fi" secondAttribute="trailing" constant="24" id="Vqg-j7-774"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="syK-Ih-geW" secondAttribute="bottom" constant="57" id="bfo-0k-mpL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nnx-Jr-M6m" secondAttribute="trailing" constant="16" id="eFP-Zf-Uhv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jy0-WY-5Fi" secondAttribute="bottom" constant="100" id="wEP-s0-mFb"/>
                             <constraint firstItem="jy0-WY-5Fi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="ySa-W9-lvq"/>
