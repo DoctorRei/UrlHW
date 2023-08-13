@@ -7,21 +7,21 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class RandomImageView: UIViewController {
     
     //MARK: - IBOutlet
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
+    //MARK: - View Did Load
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         
-        imageView.isUserInteractionEnabled = true
-        let tapImage = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-        imageView.addGestureRecognizer(tapImage)
+        setupImageView()
         
     }
     
@@ -68,14 +68,12 @@ class FirstViewController: UIViewController {
     }
     
     private func setupUI() {
-        
         DispatchQueue.main.async {
             self.imageView.layer.cornerRadius = self.imageView.frame.size.width / 2
             self.imageView.clipsToBounds = true
             self.activityIndicator.stopAnimating()
         }
-    } // Мне нужно скруглить края после того, как у меня будет изображение.
-    // У меня не получилось отобразить активитииндкатор в момент, когда меняется изобьражение. Думал, что это связано с рассинхроном потоков. Но больше похоже, что активити индикатор тупо не запускаеся
+    }
     
     private func prepareToChangeImg(){
         imageView.image = nil
@@ -83,9 +81,20 @@ class FirstViewController: UIViewController {
         
     }
     
+    private func setupImageView() {
+        imageView.isUserInteractionEnabled = true
+        let tapImage = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        imageView.addGestureRecognizer(tapImage)
+    }
+    
+    //MARK: - Objc methods
+    
     @objc func imageTapped() {
         guard let imageForCopy = imageURL else { return }
         UIPasteboard.general.url = imageForCopy
+        copyAlert(
+            withTitle: AlertMessages.shared.tileForCopy,
+            message: AlertMessages.shared.messageForCopy)
     }
     
    //MARK: - Alert Controller

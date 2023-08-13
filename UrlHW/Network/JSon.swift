@@ -7,7 +7,6 @@
 
 
 struct JsonForPictures: Decodable {
-    
     let url: String
     
 }

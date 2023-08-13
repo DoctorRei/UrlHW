@@ -8,7 +8,15 @@
 import Foundation
 import UIKit
 
-extension FirstViewController {
+extension RandomImageView: RandomImagesRealization {
+    func setupGirls() {
+        <#code#>
+    }
+    
+    func setupBoys() {
+        <#code#>
+    }
+    
     
     //MARK: - JSON Decoding for images
     
@@ -38,6 +46,21 @@ extension FirstViewController {
             }
             
         }.resume()
+    }
+    
+    //MARK: - Alert Controller For Copy Image
+    
+    func copyAlert(withTitle title: String, message : String) {
+        
+        let alertController = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert)
+        
+        let thanksButton = UIAlertAction(title: "Сяп", style: .default)
+        
+        alertController.addAction(thanksButton)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     
