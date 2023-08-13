@@ -16,6 +16,7 @@
 		E96CB1702A7EB12300C4FEDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96CB16E2A7EB12300C4FEDD /* LaunchScreen.storyboard */; };
 		E96CB1782A7EB1F200C4FEDD /* JSon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96CB1772A7EB1F200C4FEDD /* JSon.swift */; };
 		E99583A82A8918C600FCE2BB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99583A72A8918C600FCE2BB /* Extensions.swift */; };
+		E99583AA2A891FF300FCE2BB /* AlertMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99583A92A891FF300FCE2BB /* AlertMessages.swift */; };
 		E99BF9F62A88D48200DAE9DE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99BF9F52A88D48200DAE9DE /* NetworkManager.swift */; };
 		E9A5C09E2A823778000C880A /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5C09D2A823778000C880A /* Links.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		E96CB1712A7EB12300C4FEDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E96CB1772A7EB1F200C4FEDD /* JSon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSon.swift; sourceTree = "<group>"; };
 		E99583A72A8918C600FCE2BB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E99583A92A891FF300FCE2BB /* AlertMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessages.swift; sourceTree = "<group>"; };
 		E99BF9F52A88D48200DAE9DE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E9A5C09D2A823778000C880A /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,8 @@
 		E99BF9F72A88D48700DAE9DE /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E9A5C09D2A823778000C880A /* Links.swift */,
+				E96CB1772A7EB1F200C4FEDD /* JSon.swift */,
 				E99BF9F52A88D48200DAE9DE /* NetworkManager.swift */,
 			);
 			path = Network;
@@ -88,8 +92,7 @@
 		E9A5C09F2A824998000C880A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E96CB1772A7EB1F200C4FEDD /* JSon.swift */,
-				E9A5C09D2A823778000C880A /* Links.swift */,
+				E99583A92A891FF300FCE2BB /* AlertMessages.swift */,
 				E96CB16C2A7EB12300C4FEDD /* Assets.xcassets */,
 			);
 			path = Models;
@@ -197,6 +200,7 @@
 				E9A5C09E2A823778000C880A /* Links.swift in Sources */,
 				E96CB1782A7EB1F200C4FEDD /* JSon.swift in Sources */,
 				E99583A82A8918C600FCE2BB /* Extensions.swift in Sources */,
+				E99583AA2A891FF300FCE2BB /* AlertMessages.swift in Sources */,
 				E99BF9F62A88D48200DAE9DE /* NetworkManager.swift in Sources */,
 				E96CB1652A7EB12200C4FEDD /* FirstViewController.swift in Sources */,
 				E96CB1612A7EB12200C4FEDD /* AppDelegate.swift in Sources */,

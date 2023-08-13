@@ -59,6 +59,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="pxk-tm-tZR" id="AmQ-8A-Irm"/>
                         <outlet property="imageView" destination="nnx-Jr-M6m" id="TeU-4j-EPU"/>
                     </connections>
                 </viewController>
