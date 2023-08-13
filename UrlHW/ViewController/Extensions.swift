@@ -8,15 +8,7 @@
 import Foundation
 import UIKit
 
-extension RandomImageView: RandomImagesRealization {
-    func setupGirls() {
-        <#code#>
-    }
-    
-    func setupBoys() {
-        <#code#>
-    }
-    
+extension RandomImageView {
     
     //MARK: - JSON Decoding for images
     

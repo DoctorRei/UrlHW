@@ -21,7 +21,4 @@ enum Links: String {
             return URL(string: "https://api.waifu.pics/sfw/waifu")!
         }
     }
-    
-    
-    
 }

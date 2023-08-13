@@ -18,11 +18,11 @@ class RandomImageView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityIndicator.startAnimating()
-        activityIndicator.hidesWhenStopped = true
         
+        setupActivityIndicator()
         setupImageView()
         
+        view.backgroundColor = .systemGray4
     }
     
     //MARK: - View Did Appear
@@ -33,7 +33,7 @@ class RandomImageView: UIViewController {
             message: AlertMessages.shared.message)
     }
     
-    //MARK: - Global Value
+    //MARK: - Heart of this App. URL from API. Contains random art
     
     var imageURL: URL?
     
@@ -77,14 +77,18 @@ class RandomImageView: UIViewController {
     
     private func prepareToChangeImg(){
         imageView.image = nil
-        activityIndicator.hidesWhenStopped = true
-        
+        activityIndicator.startAnimating()
     }
     
     private func setupImageView() {
         imageView.isUserInteractionEnabled = true
         let tapImage = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         imageView.addGestureRecognizer(tapImage)
+    }
+    
+    private func setupActivityIndicator() {
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
     }
     
     //MARK: - Objc methods
