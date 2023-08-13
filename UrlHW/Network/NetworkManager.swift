@@ -21,22 +21,29 @@ final class NetworkManager {
     
     private init() {}
     
-    func fetchImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+    
+    func fetch<T: Decodable>(_ type: T.Type, from url: URL, completion: @escaping(Result<T, NetworkError>) -> Void) {
         URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "Unknown error")
+            guard let data else {
+                completion(.failure(.noData))
+                print(error?.localizedDescription ?? "No error description")
                 return
             }
             
-            DispatchQueue.main.async {
-                completion(UIImage(data: data))
+            let decoder = JSONDecoder()
+            
+            do {
+                let dataModel = try decoder.decode(T.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(dataModel))
+                }
+            } catch {
+                completion(.failure(.DecodingError))
             }
+            
         }.resume()
     }
     
-    func iHateThis() {
-        
-    }
     
     
 }
