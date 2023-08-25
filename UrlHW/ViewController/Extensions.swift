@@ -42,7 +42,7 @@ extension RandomImageView {
     
     //MARK: - Alert Controller For Copy Image
     
-    func copyAlert(withTitle title: String, message : String) {
+    func showCopyAlert(withTitle title: String, message : String) {
         
         let alertController = UIAlertController(
             title: title,

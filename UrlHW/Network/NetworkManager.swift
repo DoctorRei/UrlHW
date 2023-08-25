@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 enum NetworkError: Error {
     case invalidURL
@@ -22,7 +23,11 @@ final class NetworkManager {
     private init() {}
     
     
-    func fetch<T: Decodable>(_ type: T.Type, from url: URL, completion: @escaping(Result<T, NetworkError>) -> Void) {
+    func fetch<T: Decodable>(
+        _ type: T.Type,
+        from url: URL,
+        completion: @escaping(Result<T, NetworkError>) -> Void) {
+            
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data else {
                 completion(.failure(.noData))
@@ -42,6 +47,40 @@ final class NetworkManager {
             }
             
         }.resume()
+    }
+    
+    func fetchData(from url: URL, completion: @escaping(Result<Data, AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseData { dataResponse in
+                switch dataResponse.result {
+                case .success(let imageData):
+                    completion(.success(imageData))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+    
+    func getJsonForPicture() {
+        AF.request(Links.animeGirls.url)
+            .validate()
+            .responseData { dataResponse in
+                switch dataResponse.result {
+                    
+                case .success(let data):
+                    do {
+                        let decoder = JSONDecoder()
+                        let picture = try decoder.decode(JsonForPictures.self, from: data)
+                        print(picture.url)
+                    } catch {
+                        print(error)
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
     }
     
     

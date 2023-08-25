@@ -28,9 +28,10 @@ class RandomImageView: UIViewController {
     //MARK: - View Did Appear
     
     override func viewDidAppear(_ animated: Bool) {
-        presentAlert(
+        showGuideAlert(
             withTitle: AlertMessages.shared.title,
             message: AlertMessages.shared.message)
+        NetworkManager.shared.getJsonForPicture() // <------------- вот тут проверяем, сработало или нет. Сработало
     }
     
     //MARK: - Heart of this App. URL from API. Contains random art
@@ -96,14 +97,14 @@ class RandomImageView: UIViewController {
     @objc func imageTapped() {
         guard let imageForCopy = imageURL else { return }
         UIPasteboard.general.url = imageForCopy
-        copyAlert(
+        showCopyAlert(
             withTitle: AlertMessages.shared.tileForCopy,
             message: AlertMessages.shared.messageForCopy)
     }
     
    //MARK: - Alert Controller
     
-    private func presentAlert(withTitle title: String, message : String) {
+    private func showGuideAlert(withTitle title: String, message : String) {
         
         let alertController = UIAlertController(
             title: title,
